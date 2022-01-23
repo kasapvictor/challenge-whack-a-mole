@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Whack a mole!</title>
+	<link rel="preload" href="./AmaticSC-Bold.ttf" as="font" crossorigin="anonymous"/>
+	<link rel="preload" href="./AmaticSC-Regular.ttf" as="font" crossorigin="anonymous"/>
+	<link rel="stylesheet" href="./style.css">
+	<link href="https://kasapvictor.ru/wp-content/themes/kasapvictor/assets/images/3256x256.png" rel="apple-touch-icon">
+	<link href="https://kasapvictor.ru/wp-content/themes/kasapvictor/assets/images/32x32.png" rel="shortcut icon"
+	      type="image/x-icon">
+</head>
+<body>
+
+<div class="container">
+	<div class="app">
+		<aside class="app__aside">
+			<div class="app__row app__row--level">
+				<p class="app__text text--middle">
+					Level: <span class="app__level text--middle app__level-count">1</span>
+					<span class="app__button app__level app__level-button app__level-plus text--middle"></span>
+					<span class="app__button app__level app__level-button app__level-minus text--middle"></span>
+				</p>
+			</div>
+
+			<div class="app__row app__row--score">
+				<p class="app__text text--middle">Score: <span class="app__score-current text--middle">0</span></p>
+			</div>
+
+			<div class="app__row app__history">
+				<h2 class="app__score-title">History</h2>
+				<div class="app__history-list">
+					<p class="app__text text--small">20-12-2020: (lvl 10) - 8</p>
+				</div>
+
+			</div>
+
+			<div class="app__row app__row--max">
+				<p class="app__text">Max score: <span class="app__score-max">0</span></p>
+			</div>
+
+			<div class="app__row app__row--reset">
+				<button class="text--small app__button app__reset">Reset Score</button>
+			</div>
+
+			<button class="text--small app__button app__button-mobile-close">Close</button>
+		</aside>
+
+		<div class="app__container">
+			<div class="app__header">
+				<h1 class="h1 text--center">Whack a mole!</h1>
+				<div class="app__header-row app__header-row--start-timer">
+					<p class="app__text text--middle">
+						Time:
+						<span class="text--middle app__timer">30</span>
+					</p>
+					<button class="app__button app__start">Start</button>
+				</div>
+			</div>
+
+			<div class="app__field">
+				<div class="app__hole">
+					<div class="app__mole"></div>
+				</div>
+				<div class="app__hole">
+					<div class="app__mole"></div>
+				</div>
+				<div class="app__hole">
+					<div class="app__mole"></div>
+				</div>
+				<div class="app__hole">
+					<div class="app__mole"></div>
+				</div>
+				<div class="app__hole">
+					<div class="app__mole"></div>
+				</div>
+				<div class="app__hole">
+					<div class="app__mole"></div>
+				</div>
+			</div>
+
+			<div class="app__row app__row--mobile app__row--mobile-score">
+				<button class="text--small app__button app__button-mobile-score">Score List</button>
+				<p class="app__text text--middle">Score: <span class="app__score-current--mobile text--middle">0</span>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="hide sounds">
+	<audio src="hover1.mp3" id="hover1" preload="auto" muted></audio>
+	<audio src="hover2.mp3" id="hover2" preload="auto" muted></audio>
+	<audio src="hover3.mp3" id="hover3" preload="auto" muted></audio>
+	<audio src="hit.mp3" id="hit" preload="auto" muted></audio>
+	<audio src="beep.mp3" id="beep" preload="auto" muted></audio>
+	<audio src="./background1.mp3" id="background1" preload="auto" muted></audio>
+	<audio src="background2.mp3" id="background2" preload="auto" muted></audio>
+</div>
+
+<div class="app__button app__sound">♬</div>
+
+
+<script src="./scripts.js"></script>
+</body>
+</html>

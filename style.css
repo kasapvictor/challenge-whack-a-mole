@@ -1,0 +1,509 @@
+@font-face {
+    font-family: "Amatic";
+    src: url("./AmaticSC-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: "Amatic";
+    src: url("./AmaticSC-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 32px;
+    font-family: 'Amatic', sans-serif;
+    font-weight: 400;
+    color: #333;
+    box-sizing: border-box;
+    line-height: 1.5;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+h1 {
+    font-size: 84px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 64px;
+}
+
+.container {
+    width: 100%;
+    max-height: 800px;
+    height: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hide {
+    display: none;
+}
+
+.text--center {
+    text-align: center;
+}
+
+.text--middle {
+    font-size: 40px;
+}
+
+.text--small {
+    font-size: 22px;
+}
+
+.app {
+    display: flex;
+    height: 100%;
+    padding-top: 60px;
+}
+
+.app__button {
+    padding: 5px 10px;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #333;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.app__button:hover {
+    border: 1px solid tomato;
+    color: tomato;
+}
+
+/* aside */
+.app__aside {
+    width: 20%;
+    min-width: 250px;
+    padding-top: 100px;
+    height: 100%;
+    padding-right: 60px;
+    border-right: 2px solid #333;
+}
+
+.app__button-mobile-close {
+    display: none;
+}
+
+.app__row {
+    padding-left: 10px;
+}
+
+.app__row--mobile {
+    display: none;
+}
+
+.app__row--level {
+    position: relative;
+}
+
+.app__level-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 25px;
+    position: absolute;
+    cursor: pointer;
+    line-height: 0;
+    outline: none;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.app__level-button:hover {
+    color: tomato;
+    border: 1px solid tomato;
+}
+
+.app__level-plus {
+    top: 0;
+    right: 30px;
+    border: 1px solid #333;
+}
+
+.app__level-plus:before {
+    content: '+';
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.app__level-minus {
+    top: 30px;
+    right: 30px;
+    border: 1px solid #333;
+}
+
+.app__level-minus:before {
+    content: '-';
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.app__score-title {
+    margin-bottom: 10px;
+    padding: 20px 0 10px 0;
+    position: relative;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.app__score-title:after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: #333;
+}
+
+.app__row--timer {
+    padding-bottom: 20px;
+}
+
+.app__row--max {
+    padding-top: 20px;
+    position: relative;
+}
+
+.app__row--score {
+    background: #333;
+}
+
+.app__row--score * {
+    color: #fff;
+}
+
+.app__row--max:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10px;
+    height: 2px;
+    /*background: #333;*/
+}
+
+.app__container {
+    width: 80%;
+    min-width: 520px;
+    /*border: 1px solid brown;*/
+}
+
+.app__header-row {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.app__header-row--start-timer {
+    padding: 5px 30px;
+    background: #fff;
+}
+
+.app__timer {
+    display: inline-block;
+    min-width: 30px;
+}
+
+.app__start {
+    padding: 5px 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #333;
+    z-index: 20;
+}
+
+.app__start:hover {
+    border-color: tomato;
+    color: tomato;
+}
+
+
+/* field */
+.app__field {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 0 30px;
+    cursor: url('./aim.png'), auto;
+}
+
+/* hole */
+.app__hole {
+    width: 30%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.app__hole:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    bottom: -40px;
+    background-image: url(./hole.svg);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+/* mole */
+.app__mole {
+    position: absolute;
+    width: 60%;
+    height: 180px;
+    left: 50%;
+    bottom: -100%;
+    background-image: url(./mole-good.svg);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    /*border: 1px solid red;*/
+    transition: bottom .5s ease-in-out;
+    transform: translate(-50%, 0);
+}
+
+.app__mole--dead {
+    background-image: url(./mole-dead.svg), url(./mole-good.svg);
+}
+
+.app__hole--up .app__mole {
+    bottom: 5%;
+}
+
+.app__row--reset {
+    padding-top: 20px;
+}
+
+.app__reset {
+    padding: 5px 10px;
+}
+
+.app__sound {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 20px;
+    z-index: 20;
+}
+
+.app__sound--off:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #333;
+    top:50%;
+    left: 50%;
+    transform: translateX(-50%) rotate(-45deg);
+}
+
+.app__sound--off:hover:before {
+    background: tomato;
+}
+
+/* MEDIA */
+@media screen and (max-width: 1024px) {
+
+}
+
+@media screen and (max-width: 991px) {
+    .app {
+        padding-top: 60px;
+    }
+
+    .app__aside {
+        min-width: 200px;
+        padding-right: 30px;
+    }
+
+    .app__hole {
+        height: 180px;
+    }
+
+    .app__mole {
+        position: absolute;
+        width: 70%;
+        height: 100%;
+    }
+
+    .app__hole--up .app__mole {
+        bottom: -5%;
+    }
+
+    .app__sound {
+        top: 110px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    h1 {
+        font-size: 52px;
+    }
+
+    .app__score-title {
+        text-align: center;
+        padding: 0 0 10px 0;
+    }
+
+    .text--middle {
+        font-size: 34px;
+    }
+
+    .text--small {
+        font-size: 18px;
+    }
+
+    .app__container {
+        min-width: 100%;
+    }
+
+    .app__row--mobile {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    .app__aside {
+        display: none;
+        /*display: flex;*/
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-width: 100%;
+        height: 100%;
+        padding: 30px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: #fff;
+        z-index: 100;
+        border: none;
+    }
+
+    .app__row.app__row--level {
+        width: 135px;
+        padding-bottom: 20px;
+    }
+
+    .app__level-plus,
+    .app__level-minus {
+        right: -10px;
+    }
+
+    .app__field {
+        width: 100%;
+    }
+
+    .app__hole {
+        height: 180px;
+    }
+
+    .app__hole--up .app__mole {
+        bottom: -18%;
+    }
+
+    .app__mole {
+        position: absolute;
+        width: 90%;
+    }
+
+    .app__hole:after {
+        height: 70px;
+        background-position: 0 22%;
+    }
+
+    .app__row--mobile-score {
+        align-items: center;
+        padding-top: 30px;
+    }
+
+    .app__button-mobile-score {
+        margin-right: 30px;
+    }
+
+    .app__row--score {
+        padding: 5px 20px;
+    }
+
+    .app__button-mobile-close {
+        display: block;
+        position: absolute;
+        z-index: 20;
+        top: 60px;
+        right: 30px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .app {
+        padding-top: 30px;
+    }
+
+    .app__hole {
+        height: 140px;
+    }
+
+    .app__button-mobile-close {
+        top: 30px;
+    }
+
+    .app__score-title {
+        font-size: 30px;
+    }
+
+    .app__row--max {
+        padding-top: 5px;
+    }
+
+    .app__row--reset {
+        padding-top: 5px;
+    }
+
+    .app__sound {
+        top: 50px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .app__sound {
+        top: 120px;
+    }
+}
